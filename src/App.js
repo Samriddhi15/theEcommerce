@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {HashRouter} from 'react-router-dom';
 
 import About from './About';
 import Home from './Home';
@@ -71,7 +72,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Router>
+      <HashRouter>
         <GlobalStyle />
         <Header />
         <Container className="py-4">
@@ -91,7 +92,7 @@ const App = () => {
           <Route exact path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
-      </Router>
+      </HashRouter>
     </ThemeProvider>
   );
 };
