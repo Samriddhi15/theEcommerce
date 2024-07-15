@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+
 
 import About from './About';
 import Home from './Home';
@@ -80,6 +83,9 @@ const App = () => {
           <Route exact path="/singleproduct/:id" element={<SingleProduct />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="*" element={<ErrorPage />} />
+          <Route exact path="/signin" element={<SignIn />} />
+          <Route exact path="/signup" element={<SignUp />} />
+
         </Routes>
         <Footer />
       </Router>

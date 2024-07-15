@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
-import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaInstagram, FaLinkedin } from "react-icons/fa"; // Import LinkedIn icon
 
 const Footer = () => {
   return (
@@ -49,9 +49,9 @@ const Footer = () => {
                 </div>
                 <div>
                   <a
-                    href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
+                    href="https://www.linkedin.com/in/your-linkedin-profile"
                     target="_blank" rel="noreferrer">
-                    <FaYoutube className="icons" />
+                    <FaLinkedin className="icons" /> {/* Replace YouTube icon with LinkedIn icon */}
                   </a>
                 </div>
               </div>
