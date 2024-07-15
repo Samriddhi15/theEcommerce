@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {HashRouter} from 'react-router-dom';
 
 import About from './About';
 import Home from './Home';
@@ -14,8 +13,6 @@ import ErrorPage from './ErrorPage';
 import { GlobalStyle } from './GlobalStyle';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { Container } from 'react-bootstrap';
-import styled from 'styled-components';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -72,16 +69,9 @@ const App = () => {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <HashRouter>
+      <Router>
         <GlobalStyle />
-        <Header />
-        <Container className="py-4">
-          <ButtonWrapper>
-            <StyledButton onClick={toggleTheme}>
-              {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            </StyledButton>
-          </ButtonWrapper>
-        </Container>
+        <Header toggleTheme={toggleTheme} darkMode={darkMode} />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
@@ -92,31 +82,9 @@ const App = () => {
           <Route exact path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
-      </HashRouter>
+      </Router>
     </ThemeProvider>
   );
 };
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
- 
-`;
-
-const StyledButton = styled.button`
-  background-color: ${({ theme }) => theme.colors.btn};
-  color: white;
-  border: none;
-  padding: 0.8rem 1.6rem;
-  border-radius: 0.4rem;
-  font-size: 1.6rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.helper};
-  }
-`;
 
 export default App;

@@ -27,15 +27,15 @@ const Footer = () => {
         <footer>
           <div className="container grid grid-four-column">
             <div className="footer-about">
-              <h3>Thapa Technical</h3>
+              <h3>Sam Store</h3>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
             </div>
             <div className="footer-subscribe">
-              <h3>Subscribe to get important updates</h3>
+              <h3>SignUp to get important updates</h3>
               <form action="#">
                 <input type="email" name="email" placeholder="YOUR E-MAIL" />
 
-                <input type="submit" value="subscribe" />
+                <input type="submit" value="Connect" />
               </form>
             </div>
             <div className="footer-social">
@@ -50,7 +50,7 @@ const Footer = () => {
                 <div>
                   <a
                     href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
-                    target="_blank">
+                    target="_blank" rel="noreferrer">
                     <FaYoutube className="icons" />
                   </a>
                 </div>
@@ -66,7 +66,7 @@ const Footer = () => {
             <hr />
             <div className="container grid grid-two-column ">
               <p>
-                @{new Date().getFullYear()} ThapaTechnical. All Rights Reserved
+                @{new Date().getFullYear()} No Copyright, Feel free to replicate.
               </p>
               <div>
                 <p>PRIVACY POLICY</p>
@@ -102,7 +102,7 @@ const Wrapper = styled.section`
 
   footer {
     padding: 14rem 0 9rem 0;
-    background-color: ${({ theme }) => theme.colors.footer_bg};
+    background-color: #000000;
     h3 {
       color: ${({ theme }) => theme.colors.hr};
       margin-bottom: 2.4rem;
